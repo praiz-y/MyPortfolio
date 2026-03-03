@@ -4,11 +4,28 @@ const navLinks = document.querySelector('.links');
 document.querySelector('.menu').addEventListener('click', () => {
   navLinks.classList.toggle('active');
 
-  if (menuIcon.classList.contains('fa-bars')) {
-    menuIcon.classList.remove('fa-bars');
-    menuIcon.classList.add('fa-times');
-  } else {
-    menuIcon.classList.remove('fa-times');
-    menuIcon.classList.add('fa-bars');
-  }
+  menuIcon.classList.toggle('fa-bars');
+  menuIcon.classList.toggle('fa-times');
+});
+
+
+const sections = document.querySelectorAll("section");
+const navLinksAll = document.querySelectorAll(".links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (scrollY >= sectionTop - 100) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinksAll.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
 });

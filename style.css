@@ -235,6 +235,14 @@ header{
 }
 /*  */
 
+section {
+  scroll-margin-top: 90px;
+}
+
+.links a.active {
+  color: var(--accent);
+}
+
 
 /* About */
 .about{
