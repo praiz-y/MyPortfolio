@@ -685,7 +685,9 @@ section {
   .smLinks a[href*="t.me"]:hover {
     color: #0088cc; /* Telegram blue */
   }
-  
+  footer {
+    border-top: 2px dotted --accent;
+  }
   
   /* Responsive */
   @media (max-width: 768px) {
